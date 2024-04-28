@@ -1,7 +1,6 @@
 # Modifications
 * Extra files removed
 * SCSS compiled into CSS
-* `index.html` moved one folder up
 
 [Original Repository under MIT License](https://github.com/gabrielecirulli/2048)
 
