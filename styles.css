@@ -20,12 +20,14 @@ body {
 	position: relative;
 
 	/* Sliding gradient background */
-	background-image: linear-gradient(135deg, #f7cbe0, #ddf5da, #f7cbe0, #ddf5da, #f7cbe0);
+	/* TODO: fix / change gradient timing, maybe change color scheme */
+	/* https://coolors.co/e46c88-f893b5-feaec0-ffbdcb-ffd8d9 */
+	background-image: linear-gradient(135deg, #F893B5, #FFBDCB, #F893B5, #FFBDCB, #F893B5);
 	background-color: initial;
 	background-size: 200% 100%;
 	background-repeat: repeat-y;
 	background-attachment: fixed;
-	animation: sliding-gradient 2s linear infinite forwards;
+	animation: sliding-gradient 5s linear infinite forwards;
 }
 
 /* For the navbar that stays at the top */
