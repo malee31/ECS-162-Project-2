@@ -15,7 +15,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	color: #161f24;
+	color: #161F24;
 	font-family: sans-serif;
 	position: relative;
 
@@ -30,6 +30,10 @@ body {
 	animation: sliding-gradient 5s linear infinite forwards;
 }
 
+a {
+	text-decoration: none;
+}
+
 /* For the navbar that stays at the top */
 header {
 	position: fixed;
@@ -42,31 +46,17 @@ header {
 nav {
 	width: 100%;
 	height: 100%;
-	background-color: #161f24;
+	background-color: #F64783;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	gap: .75rem;
 
 	padding: 4px 8px;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    padding-left: 10vw;
-    padding-right: 10vw;
-	margin-top: 5vw;
-}
-
-img {
-    float: left;
-    padding-right: 2em;
-    width:300px;
-}
-
-
 #logo {
+	display: block;
 	height: 100%;
 	aspect-ratio: 1;
 }
@@ -74,87 +64,88 @@ img {
 #logo > img {
 	width: 100%;
 	height: 100%;
+	object-fit: contain;
+}
+
+#nav-text {
+	font-size: 1.5rem;
+	font-weight: bold;
+	font-family: sans-serif;
+
 }
 
 /* Top section of the site */
-#hero {
+main {
 	width: 100%;
 	/* Leave room for the navbar and See More */
-	padding: calc(60px + 1rem) 1rem calc(60px + 2rem);
+	padding-top: calc(60px + 1rem);
 	position: relative;
 
+	display: flex;
+	flex-direction: column;
+}
+
+#select-games {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
 
-#hero > div {
-	padding: 0 1rem;
-}
-
-#hero-side-image {
-	aspect-ratio: 16/9;
-}
-
-#hero-down {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
-	text-decoration: none;
-	font-size: 1.2rem;
-	text-align: center;
-	padding: 1rem 0.5rem;
-	color: white;
-}
-
-
-/* For images and hidden images in general */
-.covered-image {
-	display: block;
-	width: 100%;
-	aspect-ratio: 16/9;
-	position: relative;
-	overflow: hidden;
-}
-
-.cover {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	transition: .25s;
-	animation: mobile-reveal .5s ease-out;
-	animation-delay: .5s;
-	animation-fill-mode: forwards;
-}
-
-.thumbnail {
-	width: 100%;
-	aspect-ratio: 16/9;
-	object-fit: contain;
-	background: black;
-}
-
-
-/* Next section. Decrease background brightness to make distinct */
-#see-more {
-	padding: 1rem 1rem 4rem;
-	backdrop-filter: brightness(0.5);
-}
-
-/* Could be an ID but is reusable in case more sections are added with them in the future like "Latest Releases" */
-.songs {
-	display: flex;
-	flex-direction: column;
 	gap: 1rem;
-	padding: .25rem .5rem;
+	padding: 1rem 2rem;
+	margin-bottom: 2rem;
+}
+
+.game-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: .75rem;
+
+	width: 100%;
+	max-width: 800px;
+
+	padding: 1.5rem;
+	border-radius: 1rem;
+	background-color: #FCB5C5;
+	box-shadow: #7F3045 2px 2px 16px;
+	transition: box-shadow .25s;
+}
+
+.game-container:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.game-container:hover {
+	box-shadow: #7F3045 4px 4px 32px;
+}
+
+.game-img {
+	width: 200px;
+	background-color: #F893B5;
+	border-radius: .5rem;
+	flex-grow: 0;
+}
+
+.game-img > img {
+	width: 100%;
+	aspect-ratio: 1;
+}
+
+.game-container > .text {
+	width: 100%;
+	padding: 0 1rem;
+	align-self: flex-start;
+
+	color: #121212;
+	text-decoration: none;
 }
 
 /* Basic footer. Only needs to contain a few lines of text but be distinct */
 footer {
 	padding: .5rem 2rem;
-	background-color: #202020;
+	background-color: #F64783;
 }
 
 footer a {
@@ -164,7 +155,7 @@ footer a {
 
 footer a:hover {
 	background: darkred;
-	color: black;
+	color: white;
 }
 
 /* Quick useful utility classes */
@@ -182,39 +173,6 @@ footer a:hover {
 
 /* Desktop styles */
 @media only screen and (min-width: 868px) {
-	/* Top of the site goes left-right instead of top-down on desktop */
-	#hero {
-		flex-direction: row;
-		justify-content: center;
-		padding: calc(60px + 6rem) 1rem calc(60px + 3rem);
-	}
-
-	#hero-info {
-		max-width: 360px;
-		margin: 0 1rem;
-	}
-
-	#hero-side-image {
-		max-height: 360px;
-	}
-
-	/* Show songs in a row on wider screens */
-	.songs {
-		flex-direction: row;
-	}
-
-
-	/* Hover or focus to reveal on desktop instead of animate */
-	.cover {
-		animation: none;
-	}
-
-	.covered-image:hover .cover,
-	.covered-image:focus .cover {
-		top: -100%;
-	}
-
-
 	/* Show desktop-only instructions */
 	.desktop-only {
 		display: block;
