@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   background: #FFE5E8;
   color: #7F3045;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: Verdana, "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -34,7 +34,7 @@ h1.title {
 .score-container, .best-container {
   position: relative;
   display: inline-block;
-  background: #bbada0;
+  background: #C87E8D;
   padding: 15px 25px;
   font-size: 25px;
   height: 56px;
@@ -59,11 +59,10 @@ h1.title {
 .score-container .score-addition, .best-container .score-addition {
   position: absolute;
   right: 30px;
-  color: red;
   font-size: 25px;
   line-height: 25px;
   font-weight: bold;
-  color: rgba(119, 110, 101, 0.9);
+  color: rgba(159, 109, 128, 0.9);
   z-index: 100;
   -webkit-animation: move-up 600ms ease-in;
   -moz-animation: move-up 600ms ease-in;
@@ -88,7 +87,7 @@ p {
 }
 
 a {
-  color: #776E65;
+  color: #77656f;
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
@@ -122,7 +121,7 @@ hr {
   -ms-user-select: none;
   -ms-touch-action: none;
   touch-action: none;
-  background: #bbada0;
+  background: #D79FA2;
   border-radius: 6px;
   width: 500px;
   height: 500px;
@@ -137,7 +136,7 @@ hr {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(238, 228, 218, 0.5);
+  background: rgba(238, 218, 226, 0.5);
   z-index: 100;
   text-align: center;
   -webkit-animation: fade-in 800ms ease 1200ms;
@@ -160,7 +159,7 @@ hr {
 }
 .game-container .game-message a {
   display: inline-block;
-  background: #8f7a66;
+  background: #b36d80;
   border-radius: 3px;
   padding: 0 20px;
   text-decoration: none;
@@ -173,7 +172,7 @@ hr {
   display: none;
 }
 .game-container .game-message.game-won {
-  background: rgba(237, 194, 46, 0.5);
+  background: rgba(237, 46, 154, 0.5);
   color: #f9f6f2;
 }
 .game-container .game-message.game-won a.keep-playing-button {
@@ -206,7 +205,7 @@ hr {
   margin-right: 15px;
   float: left;
   border-radius: 3px;
-  background: rgba(238, 228, 218, 0.35);
+  background: rgba(238, 218, 226, 0.35);
 }
 .grid-cell:last-child {
   margin-right: 0;
@@ -458,7 +457,7 @@ hr {
 
 .restart-button {
   display: inline-block;
-  background: #8f7a66;
+  background: #b36d80;
   border-radius: 3px;
   padding: 0 20px;
   text-decoration: none;
@@ -472,21 +471,6 @@ hr {
 
 .game-explanation {
   margin-top: 50px;
-}
-
-footer {
-	padding: .5rem 2rem;
-	background-color: #202020;
-}
-
-footer a {
-	transition: .2s;
-	color: cornflowerblue;
-}
-
-footer a:hover {
-	background: darkred;
-	color: black;
 }
 
 @media screen and (max-width: 520px) {
@@ -553,7 +537,7 @@ footer a:hover {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(238, 228, 218, 0.5);
+    background: rgba(238, 218, 226, 0.5);
     z-index: 100;
     text-align: center;
     -webkit-animation: fade-in 800ms ease 1200ms;
@@ -576,7 +560,7 @@ footer a:hover {
   }
   .game-container .game-message a {
     display: inline-block;
-    background: #8f7a66;
+    background: #D79FA2;
     border-radius: 3px;
     padding: 0 20px;
     text-decoration: none;
@@ -589,7 +573,7 @@ footer a:hover {
     display: none;
   }
   .game-container .game-message.game-won {
-    background: rgba(237, 194, 46, 0.5);
+    background: rgba(237, 46, 154, 0.5);
     color: #f9f6f2;
   }
   .game-container .game-message.game-won a.keep-playing-button {
@@ -619,7 +603,7 @@ footer a:hover {
     margin-right: 15px;
     float: left;
     border-radius: 3px;
-    background: rgba(238, 228, 218, 0.35);
+    background: rgba(238, 218, 226, 0.35);
   }
   .grid-cell:last-child {
     margin-right: 0;
