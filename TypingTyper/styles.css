@@ -1,1 +1,43 @@
 /* Styles for this game specifically */
+
+.timer-container {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.type-container {
+    background-color:#DA7A88;
+    /* color:#FFDFE2; */
+    color: #D8A4BA;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 96px;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 36px;
+    font-size: larger;
+}
+
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+
+.time-choice {
+    margin: 16px 150px 16px;
+    text-align: center;
+}
+
+.time-choice input[type="radio"]:checked+label{ 
+    color: #AE0E2A; 
+}
+
+#fifteen, #thirty, #sixty {
+    margin-left: 16px;
+    margin-right: 16px;
+    visibility: hidden;
+}
