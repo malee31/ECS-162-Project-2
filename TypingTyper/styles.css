@@ -22,8 +22,11 @@
 
 input {
     background: transparent;
-    border: none;
+    border: 1px solid #7F3045;
+    padding: 4px 8px;
+    border-radius: 4px;
     outline: none;
+    width: 100%;
 }
 
 
@@ -32,8 +35,8 @@ input {
     text-align: center;
 }
 
-.time-choice input[type="radio"]:checked+label{ 
-    color: #AE0E2A; 
+.time-choice input[type="radio"]:checked+label{
+    color: #AE0E2A;
 }
 
 #fifteen, #thirty, #sixty {
