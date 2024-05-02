@@ -13,34 +13,82 @@
     color: #D8A4BA;
     margin-left: 150px;
     margin-right: 150px;
-    margin-bottom: 96px;
+    margin-bottom: 12px;
     padding-left: 30px;
     padding-right: 30px;
     line-height: 36px;
-    font-size: larger;
+    font-size: x-large;
+    font-family: monospace;
 }
 
 input {
     background: transparent;
-    border: 1px solid #7F3045;
+    border: 0px solid #7F3045;
     padding: 4px 8px;
     border-radius: 4px;
     outline: none;
     width: 100%;
+    visibility: none;
+    height: 0px;
+}
+
+#type-area {
+    visibility: none;
+    height: 0px;
+    color: transparent;
 }
 
 
 .time-choice {
     margin: 16px 150px 16px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* flex-grow: 1; */
+    align-items: left;
 }
 
 .time-choice input[type="radio"]:checked+label{
     color: #AE0E2A;
 }
 
+.time-selecter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.time-choice-right {
+    display: flex;
+    align-items: right;
+}
+
+.restart-container {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart-button {
+    background: none;
+    border: none;
+    align-items: center;
+    font-size: x-large;
+    width: fit-content;
+}
+
+#restart-button:hover {
+    color: #AE0E2A;
+}
+
 #fifteen, #thirty, #sixty {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
     visibility: hidden;
 }
