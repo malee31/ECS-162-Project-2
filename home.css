@@ -36,7 +36,7 @@
 
 .game-img {
 	width: 200px;
-	background-color: #F893B5;
+	/* background-color: #F893B5; */
 	border-radius: .5rem;
 	flex-grow: 0;
 }
@@ -44,6 +44,7 @@
 .game-img > img {
 	width: 100%;
 	aspect-ratio: 1;
+	border-radius: .25rem;
 }
 
 .game-container > .text {

@@ -103,3 +103,24 @@
     width: 0;
     visibility: hidden;
 }
+
+.underline {
+    text-decoration: underline; 
+    text-decoration-color: #FFDFE2;
+}
+
+.color-correct {
+    color: #FFDFE2;
+}
+
+.color-incorrect {
+    color: #AE0E2A;
+}
+
+.color-default {
+    color: #D8A4BA;
+}
+
+.highlight-incorrect {
+    background-color: #AE0E2A;
+}

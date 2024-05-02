@@ -2,70 +2,72 @@ const typedText = document.querySelector(".type-container span");
 const inputText = document.getElementById("type-area");
 const resetButton = document.querySelector(".restart-container button");
 const timer = document.querySelector("#timer");
-let characters;
-let correctness;
-let typeIndex;
-let startedTyping;
-let totalChars;
-let errors;
-let countdown = 30;
-let value = 30;
-let timeLeft = 30;
+const statChars = document.getElementById("stats-characters");
+const statErrors = document.getElementById("stats-errors");
+const statWPM = document.getElementById("stats-wpm");
+const statAccuracy = document.getElementById("stats-accuracy");
+const statOverlay = document.getElementById("stats-overlay");
+let paragraphIndex, characters, correctness, typeIndex, startedTyping, totalChars, errors;
+let countdown = value = timeLeft = 30;
 
-// TODO: Test what happens when you get to the end of the text
-// TODO: Randomize what string is loaded as the text to type when a reset occurs
-// TODO: deal with index out of bounds
-// TODO: Turn a lot of the `.style=""` into CSS classes and use `.classList.add()` instead
+// TODO: fix auto-focus for typing, only focus is not focused
 function onType(keyPressed) {
-	if(keyPressed === characters[typeIndex].innerText) {
-		if(startedTyping === 0) {
-			typeCountdown();
-		}
-		characters[typeIndex].style = "color: #FFDFE2;";
-		typeIndex++;
-		totalChars++;
-		correctness.push("o");
-		characters[typeIndex].style = "text-decoration: underline; text-decoration-color: #FFDFE2";
-	} else if(keyPressed === "Backspace") {
-		characters[typeIndex].style = "text-decoration: none;";
-		if(typeIndex > 0) {
-			typeIndex--;
-			if(correctness.pop() === "x") {
-				errors--;
+	if (typeIndex < characters.length) {
+		
+		if(keyPressed === characters[typeIndex].innerText) {
+			if(startedTyping === 0) {
+				typeCountdown();
 			}
-			// totalChars++;
-		}
-		characters[typeIndex].style = "color: #D8A4BA;";
-		characters[typeIndex].style = "text-decoration: underline; text-decoration-color: #FFDFE2";
+			characters[typeIndex].classList.remove("underline", "color-default");
+			characters[typeIndex].classList.add("color-correct"); // = "color: #FFDFE2;";
+			
+			typeIndex++;
+			totalChars++;
+			correctness.push(true);
+			characters[typeIndex].classList.add("underline");
+		} else if(keyPressed === "Backspace") {
+			characters[typeIndex].classList.remove("underline");
+			if(typeIndex > 0) {
+				typeIndex--;
+				if(correctness.pop() === false) {
+					errors--;
+				}
+				totalChars++;
+			}
+			characters[typeIndex].classList.remove("color-correct", "color-incorrect");
+			characters[typeIndex].classList.add("color-default", "underline");
+		} else if(keyPressed.length === 1) {
+			if(startedTyping === 0) {
+				typeCountdown();
+			}
+			characters[typeIndex].classList.remove("underline", "color-default");
+			characters[typeIndex].classList.add("color-incorrect");
+			correctness.push(false);
 
-	} else if(keyPressed.length === 1) {
-		if(startedTyping === 0) {
-			typeCountdown();
-		}
-		characters[typeIndex].style = "color: #AE0E2A;";
-		correctness.push("x");
+			// highlights space if incorrect
+			if(characters[typeIndex].innerText === " ") {
+				characters[typeIndex].classList.add("highlight-incorrect");
+			}
 
-		// highlights space if incorrect
-		if(characters[typeIndex].innerText === " ") {
-			characters[typeIndex].style = "background-color: #AE0E2A;"
+			typeIndex++;
+			totalChars++;
+			errors++;
+			characters[typeIndex].classList.add("underline");
 		}
-
-		typeIndex++;
-		totalChars++;
-		errors++;
-		characters[typeIndex].style = "text-decoration: underline; text-decoration-color: #FFDFE2;";
+	}
+	else {
+		endGame(countdown);
 	}
 }
 
 function setupTyping() {
 	inputText.addEventListener("keydown", e => onType(e.key));
 
-	// TODO: for some reason clicking in between the spaces also resets the time...
 	document.getElementById("time-select").addEventListener("click", e => {
 		value = document.querySelector('input[name="time"]:checked').value;
 		timer.innerText = `00:${value}`;
 		reset();
-	});
+	});	
 }
 
 function typeCountdown() {
@@ -84,24 +86,25 @@ function decrement() {
 			timer.innerHTML = `00:${value}`;
 		}
 	} else {
-		clearInterval(countdown);
-		inputText.disabled = true;
-		startedTyping = 0;
-
-		// stats calculations
-		// TODO: Make the getElementById into constant variables at the top of the file instead
-		// total chars including ones that were deleted
-		document.getElementById("stats-characters").innerText = totalChars;
-		document.getElementById("stats-errors").innerText = errors;
 		value = document.querySelector('input[name="time"]:checked').value;
-		const wpm = Math.round((totalChars / 5 - errors) / (value / 60));
-		document.getElementById("stats-wpm").innerText = wpm;
-		const accuracy = (((totalChars - errors) / totalChars) * 100).toFixed(2);
-		document.getElementById("stats-accuracy").innerText = accuracy;
-
-		document.getElementById("stats-overlay").style = "";
+		endGame(value);
 	}
+}
 
+function endGame(timeLeft) {
+	clearInterval(countdown);
+	inputText.disabled = true;
+	startedTyping = 0;
+
+	// stats calculations
+	statChars.innerText = totalChars;
+	statErrors.innerText = errors;
+	const wpm = Math.max(Math.round((totalChars / 5 - errors) / (timeLeft / 60)), 0);
+	statWPM.innerText = wpm;
+	const accuracy = (((totalChars - errors) / totalChars) * 100).toFixed(2);
+	statAccuracy.innerText = accuracy;
+
+	statOverlay.style = "";
 }
 
 function reset() {
@@ -120,8 +123,9 @@ function reset() {
 
 	let typedTextHTML = "";
 	characters = [];
+    paragraphIndex = Math.floor(Math.random() * textToType.length);
 
-	textToType[0].split('').forEach(char => {
+	textToType[paragraphIndex].split('').forEach(char => {
 		typedTextHTML += `<span>${char}</span>`;
 	});
 
@@ -130,7 +134,7 @@ function reset() {
 	typedText.childNodes.forEach(span => {
 		characters.push(span);
 	});
-	document.getElementById("stats-overlay").style = "z-index: -1; opacity: 0";
+	statOverlay.style = "z-index: -1; opacity: 0";
 }
 
 reset();
