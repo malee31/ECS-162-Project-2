@@ -46,6 +46,15 @@
 			<label class="type-container">
 				<input id="type-area" type="text" class="input" autocomplete="off">
 				<span></span>
+
+				<!-- TODO: Move outside of label -->
+				<div id="stats-overlay" style="z-index: -1; opacity: 0">
+					<h1>Typing Statistics</h1>
+					<p>Characters: <span id="stats-characters">0</span></p>
+					<p>Errors: <span id="stats-errors">0</span></p>
+					<p>WPM: <span id="stats-wpm">0</span></p>
+					<p>Accuracy: <span id="stats-accuracy">0</span></p>
+				</div>
 			</label>
 
 			<div class="restart-container">

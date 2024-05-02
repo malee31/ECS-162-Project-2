@@ -12,8 +12,10 @@ let countdown = 30;
 let value = 30;
 let timeLeft = 30;
 
-
+// TODO: Test what happens when you get to the end of the text
+// TODO: Randomize what string is loaded as the text to type when a reset occurs
 // TODO: deal with index out of bounds
+// TODO: Turn a lot of the `.style=""` into CSS classes and use `.classList.add()` instead
 function onType(keyPressed) {
 	if(keyPressed === characters[typeIndex].innerText) {
 		if(startedTyping === 0) {
@@ -86,15 +88,18 @@ function decrement() {
 		inputText.disabled = true;
 		startedTyping = 0;
 
-		// TODO: create overlay w/ stats
 		// stats calculations
-		console.log("chars: ", totalChars); // total chars including ones that were deleted
-		console.log("errors: ", errors);
+		// TODO: Make the getElementById into constant variables at the top of the file instead
+		// total chars including ones that were deleted
+		document.getElementById("stats-characters").innerText = totalChars;
+		document.getElementById("stats-errors").innerText = errors;
 		value = document.querySelector('input[name="time"]:checked').value;
-		let wpm = Math.round((totalChars / 5 - errors) / (value / 60));
-		let accuracy = (((totalChars - errors) / totalChars) * 100).toFixed(2);
-		console.log("wpm: ", wpm);
-		console.log("accuracy: ", accuracy);
+		const wpm = Math.round((totalChars / 5 - errors) / (value / 60));
+		document.getElementById("stats-wpm").innerText = wpm;
+		const accuracy = (((totalChars - errors) / totalChars) * 100).toFixed(2);
+		document.getElementById("stats-accuracy").innerText = accuracy;
+
+		document.getElementById("stats-overlay").style = "";
 	}
 
 }
@@ -125,6 +130,7 @@ function reset() {
 	typedText.childNodes.forEach(span => {
 		characters.push(span);
 	});
+	document.getElementById("stats-overlay").style = "z-index: -1; opacity: 0";
 }
 
 reset();

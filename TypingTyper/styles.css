@@ -16,6 +16,7 @@
     line-height: 36px;
     font-size: x-large;
     font-family: monospace;
+    position: relative;
 }
 
 #type-area {
@@ -25,6 +26,26 @@
     border: 0;
     outline: none;
     position: absolute;
+}
+
+#stats-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+
+    background: #776E65;
+    padding: 1rem 2rem;
+    transition: opacity 0.25s;
+}
+
+#stats-overlay p {
+    margin: 0;
 }
 
 
