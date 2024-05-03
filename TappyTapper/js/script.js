@@ -12,6 +12,7 @@ let points = 0;
 let buttonsClicked = 0;
 let buttonsMissed = 0;
 let gameRunning = true;
+let difficulty;
 
 function spawnButton(xPercent, yPercent) {
 	const tapButton = document.createElement("button");
@@ -96,6 +97,12 @@ function initializeGame() {
 	};
 	playArea.addEventListener("click", restartHandler, { once: true });
 	overlayRestart.addEventListener("click", restartHandler);
+
+	// document.getElementById("time-select").addEventListener("click", () => {
+	// 	initialTime = Number(document.querySelector('input[name="time"]:checked').value);
+	// 	timer.innerText = formatSeconds(initialTime);
+	// 	reset();
+	// });
 
 	setInterval(() => {
 		if(!gameRunning) return;

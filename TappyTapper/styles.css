@@ -59,6 +59,31 @@ main {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.time-choice-right {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+#difficulty-select {
+    margin: 16px 0 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* flex-grow: 1; */
+}
+
+#difficulty-select input[type="radio"]:checked + label {
+    color: #AE0E2A;
+}
+
+#easy, #medium, #hard {
+	width: 0;
+	visibility: hidden;
+}
+
+
 #restart-button {
 	background: none;
 	border: none;
