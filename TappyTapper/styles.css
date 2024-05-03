@@ -12,9 +12,15 @@ main {
 	background: #F3ADBA;
 	border: 1px solid #AE0E2A;
 	margin-bottom: 4rem;
-
+	margin-top: 36px;
 	/* Half the width of the tap buttons plus 4px */
 	padding: 20px;
+}
+
+#ingame-info {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 #tap-spawn-zone {
