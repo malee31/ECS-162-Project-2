@@ -19,27 +19,25 @@ main {
 
 .box-width {
 	max-width: 800px;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
 .game-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	gap: .75rem;
 
 	width: 100%;
-	max-width: 800px;
+	max-width: 400px;
 
 	padding: 1.5rem;
 	border-radius: 1rem;
 	background-color: #F3ADBA;
 	box-shadow: #9A495A 2px 2px 16px;
 	transition: box-shadow .25s;
-}
-
-.game-container:nth-child(even) {
-	flex-direction: row-reverse;
 }
 
 .game-container:hover {
@@ -67,4 +65,16 @@ main {
 
 	color: #411C16;
 	text-decoration: none;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 868px) {
+	.game-container {
+		max-width: 800px;
+		flex-direction: row;
+	}
+
+	.game-container:nth-child(even) {
+		flex-direction: row-reverse;
+	}
 }
