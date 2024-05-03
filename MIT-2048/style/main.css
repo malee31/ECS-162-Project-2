@@ -109,7 +109,7 @@ p {
 	margin-top: 0;
 	margin-bottom: 16px;
 	/* line-height: 1.65; */
-} 
+}
 
 a {
 	color: #776E65;
@@ -600,7 +600,6 @@ hr {
 }
 
 .restart-button {
-	display: inline-block;
 	background: #8F7A66;
 	border-radius: 3px;
 	padding: 0 20px;
