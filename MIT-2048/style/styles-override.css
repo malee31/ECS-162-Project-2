@@ -27,6 +27,7 @@ hr {
 
 .game-container {
   background: #D79FA2;
+  margin-top: 0;
 }
 .game-container .game-message {
   background: rgba(238, 218, 226, 0.5);
@@ -110,10 +111,30 @@ hr {
   color: #f9f6f2;
 }
 
+#tick-bar-container {
+  width: 100%;
+  height: 12px;
+  background: #776E65;
+  position: relative;
+  margin-top: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#tick-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: #AE0E2A;
+}
 
 
 @media screen and (max-width: 520px) {
-  
+
   .game-container {
     background: #D79FA2;
   }
@@ -133,5 +154,4 @@ hr {
   .grid-cell {
     background: rgba(238, 218, 226, 0.35);
   }
-  
 }

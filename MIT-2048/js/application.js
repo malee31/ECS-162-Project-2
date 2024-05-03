@@ -1,23 +1,30 @@
-// Modifications made: Stores the game manager and periodically makes random moves for you to make life harder
+// This file has been completely modified and customized
+// The game manager is now stored and used to periodically make random moves if the user doesn't to make life harder
+const tickBar = document.getElementById("tick-bar");
 let gameManager = null;
 
 function start() {
-  gameManager = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+	gameManager = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
 
-  initialTime = 2;
-  timerReset();
-  onZero = () => {
-    console.log("Out of time! Random swipe!");
+	initialTime = 2;
+	tickSpeed = 10;
+	timerReset();
+	onTick = () => {
+		const percentageRemaining = (1 - timeElapsed / initialTime) * 100;
 
-    // Move random direction
-    gameManager.move(Math.floor(Math.random() * 4));
+		tickBar.style = `width: ${percentageRemaining.toFixed(2)}%`;
+	};
 
-    // Reset timer again
-    timerReset();
-    timerStart();
-  };
+	onZero = () => {
+		// Move random direction
+		gameManager.move(Math.floor(Math.random() * 4));
 
-  timerStart();
+		// Reset timer again
+		timerReset();
+		timerStart();
+	};
+
+	timerStart();
 }
 
 // Wait till the browser is ready to render the game (avoids glitches)
