@@ -25,11 +25,43 @@
 
 		<main>
 			<h1 class="text-center">Play Tappy Tapper!</h1>
+			<div class="time-choice-right">
+				<p><strong>Select difficulty</strong></p>
 
-			<p>Points: <span id="score">0</span></p>
+				<div id="time-select" class="time-selector">
+					<label for="fifteen">
+						<input type="radio" id="fifteen" name="time" value="15">
+						15 s
+					</label>
+
+					<label for="thirty">
+						<input type="radio" id="thirty" name="time" value="30" checked>
+						30 s
+					</label>
+
+					<label for="sixty">
+						<input type="radio" id="sixty" name="time" value="60">
+						60 s
+					</label>
+				</div>
+			</div>
+
+			<p>How to Play: Tap all the circles the moment they appear! The faster they are tapped, the more points you get! You lose 0.5 points for each one you miss</p>
+			<p class="text-center margin-none">Click the box to start!</p>
+
+			<p class="margin-none">Score: <span id="score">0</span></p>
+			<p>Time: <span id="time">00:30</span></p>
 			<div id="tap-play-area">
 				<div id="tap-spawn-zone">
 					<!-- Buttons in the game spawn here -->
+				</div>
+
+				<div id="tap-overlay" style="z-index: -1; opacity: 0">
+					<h1>Game Over</h1>
+					<p>Total Points: <span id="stats-points">0</span></p>
+					<p>Points Per Second: <span id="stats-rate">0</span></p>
+
+					<p class="text-center pad-small">Click to Retry</p>
 				</div>
 			</div>
 		</main>
@@ -38,6 +70,7 @@
 			<p>Website Made by Marvin and Stella © 2024</p>
 		</footer>
 
+		<script src="../timer.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>
