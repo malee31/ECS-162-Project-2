@@ -8,7 +8,7 @@ let timerInterval = -1;
 let tickSpeed = 1000;
 let timerDecreasing = true;  // Set false to increase instead
 // Set these function values before starting the timer to set up a listener
-let onTick = () => {};
+let onTick = () => {console.log("HI")};
 let onZero = () => {};
 
 function timerStop() {
@@ -20,7 +20,7 @@ function timerStop() {
 
 // Starts timer if it hasn't already. Calls onTick and onZero as needed
 function timerStart() {
-	if(timerInterval === -1) return;
+	if(timerInterval !== -1) return;
 
 	timerInterval = setInterval(() => {
 		const tickSeconds = tickSpeed / 1000;
