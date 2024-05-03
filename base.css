@@ -120,13 +120,14 @@ main {
 
 /* Basic footer. Only needs to contain a few lines of text but be distinct */
 footer {
-	padding: .5rem 2rem;
+	padding: 8px 32px;
 	background-color: #E598A4;
 }
 
 footer a {
 	transition: .2s;
 	color: darkblue;
+	font-weight: normal;
 }
 
 footer a:hover {
