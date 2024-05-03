@@ -58,23 +58,29 @@ nav {
 }
 
 #logo {
-	display: block;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
 	height: 100%;
-	aspect-ratio: 1;
 }
 
 #logo > img {
-	width: 100%;
 	height: 100%;
 	object-fit: contain;
+	aspect-ratio: 1;
 }
 
-#nav-text {
+#nav-text, #nav-return {
 	font-size: 1.5rem;
 	font-weight: bold;
 	font-family: sans-serif;
 	color: #411C16;
+}
 
+#nav-return {
+	color: gray;
+	font-size: 1rem;
 }
 
 /* Top section of the site */

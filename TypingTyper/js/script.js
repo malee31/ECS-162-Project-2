@@ -84,6 +84,7 @@ function onType(keyPressed) {
 	}
 }
 
+// Initializes variables and adds all listeners
 function initializeGame() {
 	// Set up listeners for key presses
 	inputText.addEventListener("keydown", e => onType(e.key));

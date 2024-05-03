@@ -8,6 +8,9 @@ const minTime = 0.75;  // 0.75s minimum time to decide
 const timeReductionRate = 0.5;  // Time to decide reduces by 0.05s per cycle
 let gameManager = null;
 
+/**
+ * Resets the countdown for the automatic movements
+ */
 function resetTicking() {
 	initialTime = initialDecisionTime;
 	updateTickSpeed(10);
@@ -39,6 +42,7 @@ function resetTicking() {
 	timerStart();
 }
 
+// Initializes variables and adds all listeners. Starts timer
 function start() {
 	gameManager = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
 
