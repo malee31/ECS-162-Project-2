@@ -5,6 +5,11 @@ html, body {
   /* font-size: 18px; */
 }
 
+#hourglass {
+  font-size: 6rem;
+  font-weight: bolder;
+}
+
 .score-container, .best-container {
   background: #C87E8D;
   color: white;
