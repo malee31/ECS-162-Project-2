@@ -8,6 +8,7 @@ html, body {
 .score-container, .best-container {
   background: #C87E8D;
   color: white;
+  height: 65px;
 }
 .score-container:after, .best-container:after {
   color: #eee4da;
@@ -114,7 +115,7 @@ hr {
 @media screen and (max-width: 520px) {
   
   .game-container {
-    background: #bbada0;
+    background: #D79FA2;
   }
   .game-container .game-message {
     background: rgba(238, 218, 226, 0.5);
@@ -134,5 +135,3 @@ hr {
   }
   
 }
-
-/*# sourceMappingURL=main.css.map */
