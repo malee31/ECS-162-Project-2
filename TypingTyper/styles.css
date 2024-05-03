@@ -94,6 +94,7 @@
     align-items: center;
     font-size: x-large;
     width: fit-content;
+    cursor: pointer;
 }
 
 #restart-button:hover {
