@@ -3,6 +3,7 @@ const timeText = document.getElementById("time");
 const playArea = document.getElementById("tap-play-area");
 const spawnZone = document.getElementById("tap-spawn-zone");
 const statOverlay = document.getElementById("tap-overlay");
+const overlayRestart = document.getElementById("restart-button");
 // Spawn rate as a percentage. Calculated 10 times a second
 let initialButtonPoints = 15;
 let maxPenalty = -0.5;
@@ -35,10 +36,9 @@ function spawnButton(xPercent, yPercent) {
 	const handleDisperse = () => {
 		// Add more points based on how fast the button was tapped
 		points += Math.max(initialButtonPoints - lifetime, maxPenalty);
-		if (Math.max(initialButtonPoints - lifetime, maxPenalty) === maxPenalty) {
+		if(Math.max(initialButtonPoints - lifetime, maxPenalty) === maxPenalty) {
 			buttonsMissed++;
-		}
-		else {
+		} else {
 			buttonsClicked++;
 		}
 		updateScore();
@@ -86,14 +86,16 @@ function initializeGame() {
 	resetGame();
 
 	// Add start game when game area is clicked
-	playArea.addEventListener("click", () => {
+	const restartHandler = () => {
 		if(gameRunning) return;
 		resetGame();
 
 		statOverlay.style = "z-index: -1; opacity: 0";
 		timerStart();
 		gameRunning = true;
-	});
+	};
+	playArea.addEventListener("click", restartHandler, { once: true });
+	overlayRestart.addEventListener("click", restartHandler);
 
 	setInterval(() => {
 		if(!gameRunning) return;
