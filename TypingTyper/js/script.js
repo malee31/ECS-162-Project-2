@@ -51,7 +51,6 @@ function handleCharacter(char) {
 function handleBackspace() {
 	// Check if able to backspace
 	if(typeIndex <= 0) return;
-	console.log("BACK")
 
 	// Move cursor styling and undo styling and statistics on previous character
 	characters[typeIndex].classList.remove("underline");
