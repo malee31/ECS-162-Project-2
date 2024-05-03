@@ -1,3 +1,7 @@
+main {
+	align-items: center;
+}
+
 #select-games {
 	display: flex;
 	flex-direction: column;
@@ -11,6 +15,10 @@
 
 #hourglass {
 	font-size: 1.75rem;
+}
+
+.box-width {
+	max-width: 800px;
 }
 
 .game-container {
