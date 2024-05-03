@@ -25,44 +25,52 @@
 
 		<main>
 			<h1 class="text-center">Play Typing Typer!</h1>
-			<div class="time-choice">
-				<p><strong>Time left:</strong> <span id="timer">00:30</span></p>
+			<div id="game-area">
+				<div class="time-choice">
+					<p><strong>Time left:</strong> <span id="timer">00:30</span></p>
 
-				<div class="time-choice-right">
-					<p><strong>Select time</strong></p>
-					<div id="time-select" class="time-selector">
-						<input type="radio" id="fifteen" name="time" value="15">
-						<label for="fifteen">15 s</label>
+					<div class="time-choice-right">
+						<p><strong>Select time</strong></p>
+						<div id="time-select" class="time-selector">
+							<input type="radio" id="fifteen" name="time" value="15">
+							<label for="fifteen">15 s</label>
 
-						<input type="radio" id="thirty" name="time" value="30" checked>
-						<label for="thirty">30 s</label>
+							<input type="radio" id="thirty" name="time" value="30" checked>
+							<label for="thirty">30 s</label>
 
-						<input type="radio" id="sixty" name="time" value="60">
-						<label for="sixty">60 s</label>
+							<input type="radio" id="sixty" name="time" value="60">
+							<label for="sixty">60 s</label>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<label class="type-container">
-				<input id="type-area" type="text" class="input" autocomplete="off">
-				<span></span>
+				<p>How to Play: Select a time constraint, start typing the paragraph, and get as far as you can as accurately as possible!</p>
 
-				<!-- TODO: Move outside of label -->
-				<div id="stats-overlay" style="z-index: -1; opacity: 0">
-					<h1>Typing Statistics</h1>
-					<p>Characters: <span id="stats-characters">0</span></p>
-					<p>Errors: <span id="stats-errors">0</span></p>
-					<p>WPM: <span id="stats-wpm">0</span></p>
-					<p>Accuracy: <span id="stats-accuracy">0</span></p>
+				<div id="type-stack">
+					<label class="type-container">
+						<input id="type-area" type="text" class="input" autocomplete="off">
+						<span>
+							<!-- Paragraph for typing is placed here by Javascript -->
+						</span>
+					</label>
 
-					<div class="restart-container">
-						<button id="overlay-restart">&#8634; Restart</button>
+					<!-- Shown only once the game ends -->
+					<div id="stats-overlay" style="z-index: -1; opacity: 0">
+						<h1>Typing Statistics</h1>
+						<p>Characters: <span id="stats-characters">0</span></p>
+						<p>Errors: <span id="stats-errors">0</span></p>
+						<p>WPM: <span id="stats-wpm">0</span></p>
+						<p>Accuracy: <span id="stats-accuracy">0</span></p>
+
+						<div class="restart-container">
+							<button id="overlay-restart">&#8634; Restart</button>
+						</div>
 					</div>
 				</div>
-			</label>
 
-			<div class="restart-container">
-				<button id="restart-button">&#8634;</button>
+				<div class="restart-container">
+					<button id="restart-button">&#8634;</button>
+				</div>
 			</div>
 
 			<script src="../timer.js"></script>

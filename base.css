@@ -88,6 +88,12 @@ main {
 	flex-direction: column;
 }
 
+/* Used as a container in the games */
+#game-area {
+	width: 100%;
+	padding: 12px;
+}
+
 /* Basic footer. Only needs to contain a few lines of text but be distinct */
 footer {
 	padding: .5rem 2rem;
@@ -122,6 +128,12 @@ footer a:hover {
 	/* Show desktop-only instructions */
 	.desktop-only {
 		display: block;
+	}
+
+	/* Used as a container in the games */
+	#game-area {
+		padding-left: 7.5rem;
+		padding-right: 7.5rem;
 	}
 }
 

@@ -1,61 +1,13 @@
 /* Styles for this game specifically */
 
 .timer-container {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.type-container {
-    background-color: #F3ADBA;
-    /* color:#FFDFE2; */
-    color: #BE727C;
-    margin: 24px 150px;
-    padding: 12px 36px;
-    line-height: 36px;
-    font-size: x-large;
-    font-family: monospace;
-    position: relative;
-}
-
-#type-area {
-    width: 0;
-    height: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    position: absolute;
-}
-
-#stats-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: flex-start;
-
-    color: #FFCCD1;
-    background: #DB9BA3;
-    padding: 1rem 2rem;
-    transition: opacity 0.25s;
-}
-
-#stats-overlay p {
-    margin: 0;
-}
-
-#overlay-restart {
-    color: #FFCCD1;
+	margin-top: 1.75rem;
+	text-align: center;
 }
 
 
 .time-choice {
-    margin: 16px 150px 16px;
+    margin: 16px 0 16px;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -83,50 +35,100 @@
     display: flex;
 }
 
+#type-stack {
+	width: 100%;
+	padding: 12px 36px;
+	position: relative;
+
+	background-color: #F3ADBA;
+	color: #BE727C;
+	line-height: 36px;
+	font-size: x-large;
+	font-family: monospace;
+}
+
+.type-container {
+	margin: 24px 0;
+}
+
+#type-area {
+	width: 0;
+	height: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	position: absolute;
+}
+
+#stats-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: flex-start;
+
+	color: #FFCCD1;
+	background: #DB9BA3;
+	padding: 1rem 2rem;
+	transition: opacity 0.25s;
+}
+
+#stats-overlay p {
+	margin: 0;
+}
+
+#overlay-restart {
+	color: #FFCCD1;
+}
+
 .restart-container {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-bottom: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	margin-left: 150px;
+	margin-right: 150px;
+	margin-bottom: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #restart-button, #overlay-restart {
-    background: none;
-    border: none;
-    align-items: center;
-    font-size: x-large;
-    width: fit-content;
-    cursor: pointer;
+	background: none;
+	border: none;
+	align-items: center;
+	font-size: x-large;
+	width: fit-content;
+	cursor: pointer;
 }
 
 #restart-button:hover {
-    color: #AE0E2A;
+	color: #AE0E2A;
 }
 
 #fifteen, #thirty, #sixty {
-    width: 0;
-    visibility: hidden;
+	width: 0;
+	visibility: hidden;
 }
 
 .underline {
-    text-decoration: underline;
-    text-decoration-color: #FFDFE2;
+	text-decoration: underline;
+	text-decoration-color: #FFDFE2;
 }
 
 .color-correct {
-    color: #FBDCE6;
+	color: #FBDCE6;
 }
 
 .color-incorrect {
-    color: #AE0E2A;
+	color: #AE0E2A;
 }
 
 .color-default {
-    color: #BE727C;
+	color: #BE727C;
 }
 
 .highlight-incorrect {
-    background-color: #AE0E2A;
+	background-color: #AE0E2A;
 }
