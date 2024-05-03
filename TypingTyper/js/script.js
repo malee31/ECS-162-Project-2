@@ -14,6 +14,7 @@ const statOverlay = document.getElementById("stats-overlay");
 // Typing stats
 let paragraphIndex, characters, correctness, typeIndex, startedTyping, totalChars, errors;
 
+// Handles normal singular character inputs
 function handleCharacter(char) {
 	// Start the timer once a character is pressed
 	if(startedTyping === 0) {
@@ -48,6 +49,7 @@ function handleCharacter(char) {
 	characters[typeIndex].classList.add("underline");
 }
 
+// Handles backspace undoes
 function handleBackspace() {
 	// Check if able to backspace
 	if(typeIndex <= 0) return;
@@ -63,7 +65,7 @@ function handleBackspace() {
 	characters[typeIndex].classList.add("color-default", "underline");
 }
 
-// TODO: fix auto-focus for typing, only focus is not focused
+// Handles a typed character from e.key
 function onType(keyPressed) {
 	// Do nothing if text length is exceeded
 	if(typeIndex >= characters.length) return;
@@ -110,6 +112,7 @@ function initializeGame() {
 	reset();
 }
 
+// Sets up the countdown for typing
 function typeCountdown() {
 	initialTime = Number(document.querySelector('input[name="time"]:checked').value);
 	timerReset();
@@ -126,6 +129,7 @@ function typeCountdown() {
 	startedTyping = 1;
 }
 
+// Ends the game by stopping all timers and showing calculated statistics
 function endGame() {
 	// Get elapsed time from timer and reset it
 	timerStop();
@@ -147,6 +151,7 @@ function endGame() {
 	statOverlay.classList.remove("game-overlay-hidden");
 }
 
+// Resets everything and initializes everything from scratch
 function reset() {
 	startedTyping = 0;
 
@@ -170,8 +175,8 @@ function reset() {
 		typedTextHTML += `<span>${char}</span>`;
 	});
 
+	// Load in generated spans into the HTML and characters array
 	typedText.innerHTML = typedTextHTML;
-
 	typedText.childNodes.forEach(span => {
 		characters.push(span);
 	});

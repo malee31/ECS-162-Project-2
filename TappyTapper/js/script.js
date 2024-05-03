@@ -65,14 +65,17 @@ function spawnButton(xPercent, yPercent) {
 	spawnZone.appendChild(tapButton);
 }
 
+// Random number from 0-100 inclusive
 function randomPercent() {
 	return Math.floor(Math.random() * 101);
 }
 
+// Updates the score in HTML
 function updateScore() {
 	scoreText.innerText = points;
 }
 
+// Ends the game and shows stats
 function endGame() {
 	const elapsed = getElapsed();
 
@@ -88,6 +91,7 @@ function endGame() {
 	gameRunning = false;
 }
 
+// Resets the game to prepare to play again
 function resetGame() {
 	points = 0;
 	gameRunning = false;
@@ -159,4 +163,5 @@ function initializeGame() {
 	};
 }
 
+// One-time initial initialization and setup
 initializeGame();
