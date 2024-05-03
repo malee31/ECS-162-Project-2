@@ -49,6 +49,10 @@
     margin: 0;
 }
 
+#overlay-restart {
+    color: #FFCCD1;
+}
+
 
 .time-choice {
     margin: 16px 150px 16px;
@@ -88,7 +92,7 @@
     align-items: center;
 }
 
-#restart-button {
+#restart-button, #overlay-restart {
     background: none;
     border: none;
     align-items: center;
@@ -107,7 +111,7 @@
 }
 
 .underline {
-    text-decoration: underline; 
+    text-decoration: underline;
     text-decoration-color: #FFDFE2;
 }
 
