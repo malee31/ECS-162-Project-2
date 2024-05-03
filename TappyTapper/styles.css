@@ -8,8 +8,8 @@ main {
 	width: 100%;
 	aspect-ratio: 1;
 	max-height: 75vh;
-	background: #F893B5;
-	border: 1px solid #F64783;
+	background: #F3ADBA;
+	border: 1px solid #AE0E2A;
 	margin-bottom: 4rem;
 
 	/* Half the width of the tap buttons plus 4px */

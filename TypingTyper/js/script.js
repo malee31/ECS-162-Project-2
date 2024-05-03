@@ -34,7 +34,7 @@ function onType(keyPressed) {
 				}
 				totalChars++;
 			}
-			characters[typeIndex].classList.remove("color-correct", "color-incorrect");
+			characters[typeIndex].classList.remove("color-correct", "color-incorrect", "highlight-incorrect");
 			characters[typeIndex].classList.add("color-default", "underline");
 		} else if(keyPressed.length === 1) {
 			if(startedTyping === 0) {

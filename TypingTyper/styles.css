@@ -8,9 +8,9 @@
 }
 
 .type-container {
-    background-color:#DA7A88;
+    background-color:#F3ADBA;
     /* color:#FFDFE2; */
-    color: #D8A4BA;
+    color: #BE727C;
     margin: 24px 150px;
     padding: 12px 36px;
     line-height: 36px;
@@ -39,7 +39,8 @@
     align-content: center;
     justify-content: flex-start;
 
-    background: #776E65;
+    color: #FFCCD1;
+    background: #DB9BA3;
     padding: 1rem 2rem;
     transition: opacity 0.25s;
 }
@@ -110,7 +111,7 @@
 }
 
 .color-correct {
-    color: #FFDFE2;
+    color: #FBDCE6;
 }
 
 .color-incorrect {
@@ -118,7 +119,7 @@
 }
 
 .color-default {
-    color: #D8A4BA;
+    color: #BE727C;
 }
 
 .highlight-incorrect {

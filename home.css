@@ -21,8 +21,8 @@
 
 	padding: 1.5rem;
 	border-radius: 1rem;
-	background-color: #FCB5C5;
-	box-shadow: #7F3045 2px 2px 16px;
+	background-color: #F3ADBA;
+	box-shadow: #9A495A 2px 2px 16px;
 	transition: box-shadow .25s;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .game-container:hover {
-	box-shadow: #7F3045 4px 4px 32px;
+	box-shadow: #712938 4px 4px 32px;
 }
 
 .game-img {
@@ -45,6 +45,7 @@
 	width: 100%;
 	aspect-ratio: 1;
 	border-radius: .25rem;
+	border: 2px solid #D7A0A2;
 }
 
 .game-container > .text {
