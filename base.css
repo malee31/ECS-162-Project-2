@@ -102,12 +102,11 @@ footer {
 
 footer a {
 	transition: .2s;
-	color: cornflowerblue;
+	color: darkblue;
 }
 
 footer a:hover {
-	background: darkred;
-	color: white;
+	text-decoration: darkblue underline;
 }
 
 /* Quick useful utility classes */
