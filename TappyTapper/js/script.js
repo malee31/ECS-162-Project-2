@@ -103,14 +103,14 @@ function initializeGame() {
 		switch(selectedDifficulty) {
 			// Hard
 			case "3":
-				spawnRate = 0.5;
-				initialButtonPoints = 10;
+				spawnRate = 0.3;
+				initialButtonPoints = 9;
 				resetGame();
 			break;
 
 			// Medium
 			case "2":
-				spawnRate = 0.25;
+				spawnRate = 0.15;
 				initialButtonPoints = 10;
 				resetGame();
 			break;
