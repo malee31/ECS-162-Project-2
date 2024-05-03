@@ -25,46 +25,48 @@
 
 		<main>
 			<h1 class="text-center">Play Tappy Tapper!</h1>
-			<div class="time-choice-right">
-				<p><strong>Select difficulty</strong></p>
+			<div id="game-area">
+				<div class="time-choice-right">
+					<p><strong>Select difficulty</strong></p>
 
-				<div id="difficulty-select" class="time-selector">
-					<input type="radio" id="easy" name="time" value="1">
-					<label for="easy">
-						Easy
-					</label>
+					<div id="difficulty-select" class="time-selector">
+						<input type="radio" id="easy" name="time" value="1">
+						<label for="easy">
+							Easy
+						</label>
 
-					<input type="radio" id="medium" name="time" value="2" checked>
-					<label for="medium">
-						Medium
-					</label>
-					
-					<input type="radio" id="hard" name="time" value="3">
-					<label for="hard">
-						Hard
-					</label>
-				</div>
-			</div>
+						<input type="radio" id="medium" name="time" value="2" checked>
+						<label for="medium">
+							Medium
+						</label>
 
-			<p>How to Play: Tap all the circles the moment they appear! The faster they are tapped, the more points you get! You lose 0.5 points for each one you miss</p>
-			<p class="text-center margin-none">Click the box to start!</p>
-
-			<p class="margin-none">Score: <span id="score">0</span></p>
-			<p>Time: <span id="time">00:30</span></p>
-			<div id="tap-play-area">
-				<div id="tap-spawn-zone">
-					<!-- Buttons in the game spawn here -->
+						<input type="radio" id="hard" name="time" value="3">
+						<label for="hard">
+							Hard
+						</label>
+					</div>
 				</div>
 
-				<div id="tap-overlay" style="z-index: -1; opacity: 0">
-					<h1>Game Over</h1>
-					<p>Total Points: <span id="stats-points">0</span></p>
-					<p>Points Per Second: <span id="stats-rate">0</span></p>
-					<p>Buttons Clicked: <span id="buttons-clicked">0</span></p>
-					<p>Buttons Missed: <span id="buttons-missed">0</span></p>
-					
-					<button id="restart-button">Click to Retry</button>
-					<!-- <p class="text-center pad-small" id="retry-text">Click to Retry</p> -->
+				<p>How to Play: Tap all the circles the moment they appear! The faster they are tapped, the more points you get! You lose 0.5 points for each one you miss</p>
+				<p class="text-center margin-none">Click the box to start!</p>
+
+				<p class="margin-none">Score: <span id="score">0</span></p>
+				<p>Time: <span id="time">00:30</span></p>
+				<div id="tap-play-area">
+					<div id="tap-spawn-zone">
+						<!-- Buttons in the game spawn here -->
+					</div>
+
+					<div id="tap-overlay" style="z-index: -1; opacity: 0">
+						<h1>Game Over</h1>
+						<p>Total Points: <span id="stats-points">0</span></p>
+						<p>Points Per Second: <span id="stats-rate">0</span></p>
+						<p>Buttons Clicked: <span id="buttons-clicked">0</span></p>
+						<p>Buttons Missed: <span id="buttons-missed">0</span></p>
+
+						<button id="restart-button">Click to Retry</button>
+						<!-- <p class="text-center pad-small" id="retry-text">Click to Retry</p> -->
+					</div>
 				</div>
 			</div>
 		</main>
