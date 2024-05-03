@@ -8,7 +8,7 @@
 }
 
 .type-container {
-    background-color:#F3ADBA;
+    background-color: #F3ADBA;
     /* color:#FFDFE2; */
     color: #BE727C;
     margin: 24px 150px;
@@ -63,7 +63,7 @@
     /* flex-grow: 1; */
 }
 
-.time-choice input[type="radio"]:checked+label{
+.time-choice input[type="radio"]:checked + label {
     color: #AE0E2A;
 }
 
