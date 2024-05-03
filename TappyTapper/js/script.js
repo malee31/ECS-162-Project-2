@@ -139,9 +139,11 @@ function initializeGame() {
 				initialButtonPoints = 15;
 				resetGame();
 		}
-		initialTime = Number(document.querySelector('input[name="time"]:checked').value);
-		timer.innerText = formatSeconds(initialTime);
-		reset();
+
+		timeText.innerText = formatSeconds(initialTime);
+		timerReset();
+		gameRunning = true;
+		timerStart();
 	});
 
 	setInterval(() => {
