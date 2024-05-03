@@ -36,7 +36,7 @@ main {
 	align-content: center;
 	justify-content: flex-start;
 
-	color: #FFCCD1;
+	color: #AE0E2A;
 	background: #DB9BA3;
 	padding: 1rem 2rem;
 	transition: opacity 0.25s;
@@ -54,4 +54,21 @@ main {
 	/* Position should be overridden with inline styles */
 	top: 0;
 	left: 0;
+	background-color: #FBDCE6;
+	color: #411C16;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#restart-button {
+	background: none;
+	border: none;
+	align-items: center;
+	font-size: x-large;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #AE0E2A;
+	font-weight: bold;
+	
 }

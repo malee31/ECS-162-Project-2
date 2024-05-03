@@ -8,6 +8,8 @@ let initialButtonPoints = 15;
 let maxPenalty = -0.5;
 let spawnRate = 0.1;
 let points = 0;
+let buttonsClicked = 0;
+let buttonsMissed = 0;
 let gameRunning = true;
 
 function spawnButton(xPercent, yPercent) {
@@ -33,6 +35,12 @@ function spawnButton(xPercent, yPercent) {
 	const handleDisperse = () => {
 		// Add more points based on how fast the button was tapped
 		points += Math.max(initialButtonPoints - lifetime, maxPenalty);
+		if (Math.max(initialButtonPoints - lifetime, maxPenalty) === maxPenalty) {
+			buttonsMissed++;
+		}
+		else {
+			buttonsClicked++;
+		}
 		updateScore();
 
 		// Button deletes self and cleans up
@@ -57,7 +65,9 @@ function endGame() {
 	const elapsed = timeElapsed;
 
 	document.getElementById("stats-points").innerText = points;
-	document.getElementById("stats-rate").innerText = points / elapsed;
+	document.getElementById("stats-rate").innerText = (points / elapsed).toFixed(2);
+	document.getElementById("buttons-clicked").innerText = buttonsClicked;
+	document.getElementById("buttons-missed").innerText = buttonsMissed;
 	// Show overlay
 	statOverlay.style = "";
 

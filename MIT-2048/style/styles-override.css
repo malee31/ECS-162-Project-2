@@ -1,0 +1,138 @@
+html, body {
+  background: #FFE5E8;
+  color: #7F3045;
+  font-family: Verdana, "Helvetica Neue", Arial, sans-serif;
+  /* font-size: 18px; */
+}
+
+.score-container, .best-container {
+  background: #C87E8D;
+  color: white;
+}
+.score-container:after, .best-container:after {
+  color: #eee4da;
+}
+.score-container .score-addition, .best-container .score-addition {
+  color: rgba(159, 109, 128, 0.9);
+}
+
+a {
+  color: #77656f;
+}
+
+hr {
+  border-bottom: 1px solid #d8d4d0;
+}
+
+.game-container {
+  background: #D79FA2;
+}
+.game-container .game-message {
+  background: rgba(238, 218, 226, 0.5);
+}
+
+.game-container .game-message a {
+  background: #b36d80;
+  color: #f9f6f2;
+}
+
+.game-container .game-message.game-won {
+  background: rgba(237, 46, 154, 0.5);
+  color: #f9f6f2;
+}
+
+.grid-cell {
+  background: rgba(238, 218, 226, 0.35);
+}
+
+/* colors from https://images.squarespace-cdn.com/content/v1/620bb50c00af5319710b2218/1645366979748-6I03GCV1DEPQN32KZBAG/image-asset.jpeg */
+.tile .tile-inner {
+  background: #FFD7D8;
+}
+.tile.tile-2 .tile-inner {
+  background: #FBDBE6;
+}
+.tile.tile-4 .tile-inner {
+  background: #FBDBE6;
+}
+.tile.tile-8 .tile-inner {
+  background: #FFCCD1;
+}
+.tile.tile-16 .tile-inner {
+  color: #FFF4F0;
+  background: #FCB5C5;
+}
+.tile.tile-32 .tile-inner {
+  color: #FFF4F0;
+  background: #FFA3B2;
+}
+.tile.tile-64 .tile-inner {
+  color: #FFF4F0;
+  background: #FC91A5;
+}
+.tile.tile-128 .tile-inner {
+  color: #FFF4F0;
+  background: #F5839A;
+  box-shadow: 0 0 30px 10px rgba(253, 119, 174, 0.2380952381), inset 0 0 0 1px rgba(255, 255, 255, 0.1428571429);
+}
+.tile.tile-256 .tile-inner {
+  color: #FFF4F0;
+  background: #F86D8C;
+  box-shadow: 0 0 30px 10px rgba(253, 119, 174, 0.3174603175), inset 0 0 0 1px rgba(255, 255, 255, 0.1904761905);
+}
+
+.tile.tile-512 .tile-inner {
+  color: #FFF4F0;
+  background: #F5839A;
+  box-shadow: 0 0 30px 10px rgba(253, 119, 174, 0.3968253968), inset 0 0 0 1px rgba(255, 255, 255, 0.2380952381);
+}
+
+.tile.tile-1024 .tile-inner {
+  color: #FFF4F0;
+  background: #D21F46;
+  box-shadow: 0 0 30px 10px rgba(253, 119, 174, 0.4761904762), inset 0 0 0 1px rgba(255, 255, 255, 0.2857142857);
+}
+
+.tile.tile-2048 .tile-inner {
+  color: #FFF4F0;
+  background: #A50032;
+  box-shadow: 0 0 30px 10px rgba(253, 119, 174, 0.5555555556), inset 0 0 0 1px rgba(255, 255, 255, 0.3333333333);
+}
+
+.tile.tile-super .tile-inner {
+  color: #FFF4F0;
+  background: #8E0D08;
+}
+
+.restart-button {
+  background: #b36d80;
+  color: #f9f6f2;
+}
+
+
+
+@media screen and (max-width: 520px) {
+  
+  .game-container {
+    background: #bbada0;
+  }
+  .game-container .game-message {
+    background: rgba(238, 218, 226, 0.5);
+  }
+
+  .game-container .game-message a {
+    background: #D79FA2;
+    color: #f9f6f2;
+  }
+
+  .game-container .game-message.game-won {
+    background: rgba(237, 46, 154, 0.5);
+    color: #f9f6f2;
+  }
+  .grid-cell {
+    background: rgba(238, 218, 226, 0.35);
+  }
+  
+}
+
+/*# sourceMappingURL=main.css.map */
