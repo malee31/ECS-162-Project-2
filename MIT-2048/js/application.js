@@ -10,14 +10,15 @@ let gameManager = null;
 
 function resetTicking() {
 	initialTime = initialDecisionTime;
-	tickSpeed = 10;
+	updateTickSpeed(10);
 	timerReset();
 	onTick = () => {
 		// Stop timer if it ended
 		if(gameManager.isGameTerminated()) timerStop();
 
-		const percentageRemaining = (1 - timeElapsed / initialTime) * 100;
+		const percentageRemaining = (1 - getElapsed() / initialTime) * 100;
 
+		// Animate ticking time remaining bar width from 100% to 0%
 		tickBar.style = `width: ${percentageRemaining.toFixed(2)}%`;
 	};
 

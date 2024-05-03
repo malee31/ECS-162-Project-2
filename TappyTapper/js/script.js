@@ -62,14 +62,14 @@ function updateScore() {
 }
 
 function endGame() {
-	const elapsed = timeElapsed;
+	const elapsed = getElapsed();
 
 	document.getElementById("stats-points").innerText = points;
 	document.getElementById("stats-rate").innerText = (points / elapsed).toFixed(2);
-	document.getElementById("buttons-clicked").innerText = buttonsClicked;
-	document.getElementById("buttons-missed").innerText = buttonsMissed;
+	document.getElementById("buttons-clicked").innerText = buttonsClicked.toString();
+	document.getElementById("buttons-missed").innerText = buttonsMissed.toString();
 	// Show overlay
-	statOverlay.style = "";
+	statOverlay.classList.remove("game-overlay-hidden");
 
 	timerReset();
 	timeText.innerText = formatSeconds(initialTime);
@@ -90,7 +90,7 @@ function initializeGame() {
 		if(gameRunning) return;
 		resetGame();
 
-		statOverlay.style = "z-index: -1; opacity: 0";
+		statOverlay.classList.add("game-overlay-hidden");
 		timerStart();
 		gameRunning = true;
 	};

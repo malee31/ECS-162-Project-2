@@ -128,7 +128,7 @@ function typeCountdown() {
 function endGame() {
 	// Get elapsed time from timer and reset it
 	timerStop();
-	const elapsed = timeElapsed;
+	const elapsed = getElapsed();
 	timerReset();
 
 	startedTyping = 0;
@@ -143,7 +143,7 @@ function endGame() {
 	statAccuracy.innerText = accuracy.toFixed(2);
 
 	// Show overlay
-	statOverlay.style = "";
+	statOverlay.classList.remove("game-overlay-hidden");
 }
 
 function reset() {
@@ -176,7 +176,7 @@ function reset() {
 	});
 
 	// Hide overlay
-	statOverlay.style = "z-index: -1; opacity: 0";
+	statOverlay.classList.add("game-overlay-hidden");
 }
 
 // Setup listeners (one-time call)
