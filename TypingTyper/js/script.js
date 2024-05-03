@@ -14,6 +14,7 @@ const statOverlay = document.getElementById("stats-overlay");
 // Typing stats
 let paragraphIndex, characters, correctness, typeIndex, startedTyping, totalChars, errors;
 
+// Handles normal singular character inputs
 function handleCharacter(char) {
 	// Start the timer once a character is pressed
 	if(startedTyping === 0) {
@@ -48,6 +49,7 @@ function handleCharacter(char) {
 	characters[typeIndex].classList.add("underline");
 }
 
+// Handles backspace undoes
 function handleBackspace() {
 	// Check if able to backspace
 	if(typeIndex <= 0) return;
@@ -63,7 +65,7 @@ function handleBackspace() {
 	characters[typeIndex].classList.add("color-default", "underline");
 }
 
-// TODO: fix auto-focus for typing, only focus is not focused
+// Handles a typed character from e.key
 function onType(keyPressed) {
 	// Do nothing if text length is exceeded
 	if(typeIndex >= characters.length) return;
@@ -84,6 +86,7 @@ function onType(keyPressed) {
 	}
 }
 
+// Initializes variables and adds all listeners
 function initializeGame() {
 	// Set up listeners for key presses
 	inputText.addEventListener("keydown", e => onType(e.key));
@@ -109,6 +112,7 @@ function initializeGame() {
 	reset();
 }
 
+// Sets up the countdown for typing
 function typeCountdown() {
 	initialTime = Number(document.querySelector('input[name="time"]:checked').value);
 	timerReset();
@@ -125,10 +129,11 @@ function typeCountdown() {
 	startedTyping = 1;
 }
 
+// Ends the game by stopping all timers and showing calculated statistics
 function endGame() {
 	// Get elapsed time from timer and reset it
 	timerStop();
-	const elapsed = timeElapsed;
+	const elapsed = getElapsed();
 	timerReset();
 
 	startedTyping = 0;
@@ -143,9 +148,10 @@ function endGame() {
 	statAccuracy.innerText = accuracy.toFixed(2);
 
 	// Show overlay
-	statOverlay.style = "";
+	statOverlay.classList.remove("game-overlay-hidden");
 }
 
+// Resets everything and initializes everything from scratch
 function reset() {
 	startedTyping = 0;
 
@@ -169,14 +175,14 @@ function reset() {
 		typedTextHTML += `<span>${char}</span>`;
 	});
 
+	// Load in generated spans into the HTML and characters array
 	typedText.innerHTML = typedTextHTML;
-
 	typedText.childNodes.forEach(span => {
 		characters.push(span);
 	});
 
 	// Hide overlay
-	statOverlay.style = "z-index: -1; opacity: 0";
+	statOverlay.classList.add("game-overlay-hidden");
 }
 
 // Setup listeners (one-time call)

@@ -17,7 +17,7 @@ main {
 	padding: 20px;
 }
 
-#ingame-info {
+#in-game-info {
 	display:flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -27,25 +27,6 @@ main {
 	width: 100%;
 	height: 100%;
 	position: relative;
-}
-
-/* TODO: Duplicate styling for overlay */
-#tap-overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: flex-start;
-
-	color: #AE0E2A;
-	background: #DB9BA3;
-	padding: 1rem 2rem;
-	transition: opacity 0.25s;
 }
 
 /* Make a centered circle that can be absolutely positioned */

@@ -13,7 +13,15 @@ let buttonsClicked = 0;
 let buttonsMissed = 0;
 let gameRunning = true;
 
+/**
+ * Spawns a new button to click at the x and y positions specified
+ * Buttons will take care of its own expiration and point tracking/granting
+ * @param {number} xPercent - Percentage from 0-100
+ * @param {number} yPercent - Percentage from 0-100
+ */
 function spawnButton(xPercent, yPercent) {
+	// Button element chosen instead of `div` for accessibility reasons.
+	// It is possible to play the game with a keyboard instead of a mouse
 	const tapButton = document.createElement("button");
 	tapButton.classList.add("tap-button");
 	// Random position
@@ -22,6 +30,7 @@ function spawnButton(xPercent, yPercent) {
 
 	// Longer lived buttons give less, or even negative, points. Lifetime is measured in tenths of a second
 	let lifetime = 0;
+	// Continuously decrement the number of points a button is worth
 	const buttonTimer = setInterval(() => {
 		lifetime++;
 		const value = initialButtonPoints - lifetime;
@@ -33,6 +42,9 @@ function spawnButton(xPercent, yPercent) {
 		}
 	}, 100);
 
+	/**
+	 * Handles the point granting and deletion of the button
+	 */
 	const handleDisperse = () => {
 		// Add more points based on how fast the button was tapped
 		points += Math.max(initialButtonPoints - lifetime, maxPenalty);
@@ -53,35 +65,40 @@ function spawnButton(xPercent, yPercent) {
 	spawnZone.appendChild(tapButton);
 }
 
+// Random number from 0-100 inclusive
 function randomPercent() {
 	return Math.floor(Math.random() * 101);
 }
 
+// Updates the score in HTML
 function updateScore() {
 	scoreText.innerText = points;
 }
 
+// Ends the game and shows stats
 function endGame() {
-	const elapsed = timeElapsed;
+	const elapsed = getElapsed();
 
 	document.getElementById("stats-points").innerText = points;
 	document.getElementById("stats-rate").innerText = (points / elapsed).toFixed(2);
-	document.getElementById("buttons-clicked").innerText = buttonsClicked;
-	document.getElementById("buttons-missed").innerText = buttonsMissed;
+	document.getElementById("buttons-clicked").innerText = buttonsClicked.toString();
+	document.getElementById("buttons-missed").innerText = buttonsMissed.toString();
 	// Show overlay
-	statOverlay.style = "";
+	statOverlay.classList.remove("game-overlay-hidden");
 
 	timerReset();
 	timeText.innerText = formatSeconds(initialTime);
 	gameRunning = false;
 }
 
+// Resets the game to prepare to play again
 function resetGame() {
 	points = 0;
 	gameRunning = false;
 	updateScore();
 }
 
+// Initializes variables and adds all listeners
 function initializeGame() {
 	resetGame();
 
@@ -90,7 +107,7 @@ function initializeGame() {
 		if(gameRunning) return;
 		resetGame();
 
-		statOverlay.style = "z-index: -1; opacity: 0";
+		statOverlay.classList.add("game-overlay-hidden");
 		timerStart();
 		gameRunning = true;
 	};
@@ -106,14 +123,14 @@ function initializeGame() {
 				spawnRate = 0.3;
 				initialButtonPoints = 9;
 				resetGame();
-			break;
+				break;
 
 			// Medium
 			case "2":
 				spawnRate = 0.15;
 				initialButtonPoints = 10;
 				resetGame();
-			break;
+				break;
 
 			// Easy
 			case "1":
@@ -146,4 +163,5 @@ function initializeGame() {
 	};
 }
 
+// One-time initial initialization and setup
 initializeGame();

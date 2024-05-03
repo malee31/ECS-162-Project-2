@@ -1,3 +1,5 @@
+// NOTE: This code has been read to adapt the code in `application.js` for the twist
+
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;

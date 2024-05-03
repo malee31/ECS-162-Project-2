@@ -8,16 +8,20 @@ const minTime = 0.75;  // 0.75s minimum time to decide
 const timeReductionRate = 0.5;  // Time to decide reduces by 0.05s per cycle
 let gameManager = null;
 
+/**
+ * Resets the countdown for the automatic movements
+ */
 function resetTicking() {
 	initialTime = initialDecisionTime;
-	tickSpeed = 10;
+	updateTickSpeed(10);
 	timerReset();
 	onTick = () => {
 		// Stop timer if it ended
 		if(gameManager.isGameTerminated()) timerStop();
 
-		const percentageRemaining = (1 - timeElapsed / initialTime) * 100;
+		const percentageRemaining = (1 - getElapsed() / initialTime) * 100;
 
+		// Animate ticking time remaining bar width from 100% to 0%
 		tickBar.style = `width: ${percentageRemaining.toFixed(2)}%`;
 	};
 
@@ -38,6 +42,7 @@ function resetTicking() {
 	timerStart();
 }
 
+// Initializes variables and adds all listeners. Starts timer
 function start() {
 	gameManager = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
 
