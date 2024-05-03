@@ -13,7 +13,6 @@ const statOverlay = document.getElementById("stats-overlay");
 
 // Typing stats
 let paragraphIndex, characters, correctness, typeIndex, startedTyping, totalChars, errors;
-let countdown = value = timeLeft = 30;
 
 function handleCharacter(char) {
 	// Start the timer once a character is pressed
@@ -82,7 +81,7 @@ function onType(keyPressed) {
 
 	// Game has ended
 	if(typeIndex >= characters.length) {
-		endGame(countdown);
+		endGame();
 	}
 }
 
