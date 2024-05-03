@@ -9,6 +9,10 @@
 	margin-bottom: 2rem;
 }
 
+#hourglass {
+	font-size: 1.75rem;
+}
+
 .game-container {
 	display: flex;
 	flex-direction: row;
